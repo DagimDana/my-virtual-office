@@ -13,7 +13,6 @@ interface CompanyData {
 export default function App() {
   const navigate = useNavigate();
   const [logoPreview, setLogoPreview] = useState<string | null>(null);
-  const [logoFile, setLogoFile] = useState<File | null>(null);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -28,7 +27,6 @@ export default function App() {
   const handleLogoUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
-      setLogoFile(file);
       const reader = new FileReader();
       reader.onloadend = () => {
         setLogoPreview(reader.result as string);
@@ -64,7 +62,6 @@ export default function App() {
         size: '',
       });
       setLogoPreview(null);
-      setLogoFile(null);
 
       // Redirect to Features page after a short delay
       setTimeout(() => {

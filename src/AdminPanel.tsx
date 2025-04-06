@@ -3,7 +3,7 @@ import { supabase } from './lib/supabase';
 import { format } from 'date-fns';
 import { Trash2, Mail, CheckCircle, XCircle, LogOut, Loader2 } from 'lucide-react';
 import { toast } from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 interface Message {
   id: string;
@@ -16,7 +16,7 @@ interface Message {
 }
 
 export default function AdminPanel() {
-  const navigate = useNavigate();
+//   const navigate = useNavigate();
   const [messages, setMessages] = useState<Message[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedMessage, setSelectedMessage] = useState<Message | null>(null);
