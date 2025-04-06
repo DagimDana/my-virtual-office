@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #0a0a0a;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.auth-container {
+  @apply min-h-screen bg-cover bg-center bg-no-repeat flex flex-col;
+  background-image: url("/hero.png");
+  background-color: rgba(0, 0, 0, 0.85);
+  background-blend-mode: overlay;
+}
+
+.btn-primary {
+  @apply px-6 py-2 bg-[#ff9500] text-white rounded hover:bg-[#ff9500]/90 transition-colors font-medium text-sm;
+}
+
+.btn-secondary {
+  @apply px-6 py-2 bg-transparent border border-white/30 text-white rounded hover:bg-white/10 transition-colors font-medium text-sm;
+}
+
+.footer-link {
+  @apply text-sm text-white/50 hover:text-white/70 transition-colors;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+@layer utilities {
+  .text-primary {
+    color: #ff9500;
+  }
+}
